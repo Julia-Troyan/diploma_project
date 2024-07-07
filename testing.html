@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing</title>
+  <link rel="stylesheet" href="./css/style_testing.css">
+</head>
+<body>
+  <div class="header container">
+    <div class="logo">
+      <a href="#"><img src="./img_main/logo 1.png" alt="logo"></a>
+    </div>
+    <div class="navigation">
+      <div class="nav-item">
+        <img src="./img_main/square1.png" alt="square1">
+        <a href="#"><button><h3>Тестирование</h3></button></a>
+      </div>
+      <div class="nav-item">
+        <img src="./img_main/personal.png" alt="personal">
+        <a href="#"><button><h3>Личный кабинет</h3></button></a>
+      </div>
+    </div>
+  </div>
+  <main class="main container">
+    <div>
+      <button id="add-student-btn"><img src="./img_testing/pencil.svg" alt="pensil"></button>
+      <p>Добавить стажёра</p>
+    </div>
+  </main>
+  <div class="teable container">
+    <table class="blok">
+      <tr>
+        <th><div>Дата</div></th>
+        <th><div>ФИО оператора</div></th>
+        <th><div>Форма обучения</div></th>
+        <th><div>Попытка</div></th>
+        <th><div>Время (МСК)</div></th>
+        <th><div>ФИ специалиста</div></th>
+        <th><div>Результат ТЗ</div></th>
+        <th><div>Коментарий</div></th>
+        <th><div>ФИ обучающего/обучающих</div></th>
+        <th><div>ФИ принимающего внутреннее ТЗ</div></th>
+        <th><div>Действия</div></th>
+      </tr>
+      <!-- Пример строки данных -->
+      <tr>
+        <td><div>01.01.2024</div></td>
+        <td><div>Иванов Иван Иванович</div></td>
+        <td><div>Очная</div></td>
+        <td><div>Первая</div></td>
+        <td><div>10:00</div></td>
+        <td><div>Петров Петр Петрович</div></td>
+        <td><div>Успешно</div></td>
+        <td><div>Хорошая работа</div></td>
+        <td><div>Сидоров Сергей Сергеевич</div></td>
+        <td><div>Николаев Николай Николаевич</div></td>
+        <td>
+          <button class="edit-btn">Изменить</button>
+          <button class="delete-btn">Удалить</button>
+        </td>
+      </tr>
+      <!-- Добавьте остальные строки таблицы здесь -->
+    </table>
+  </div>
+
+  <!-- Модальное окно -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Добавить/Изменить стажёра</h2>
+      <form id="add-student-form">
+        <label for="date">Дата:</label>
+        <input type="date" id="date" name="date" required><br>
+        <label for="operator">ФИО оператора:</label>
+        <input type="text" id="operator" name="operator" required><br>
+        <label for="training-form">Форма обучения:</label>
+        <input type="text" id="training-form" name="training-form" required><br>
+        <label for="attempt">Попытка:</label>
+        <input type="text" id="attempt" name="attempt" required><br>
+        <label for="time">Время (МСК):</label>
+        <input type="time" id="time" name="time" required><br>
+        <label for="specialist">ФИ специалиста:</label>
+        <input type="text" id="specialist" name="specialist" required><br>
+        <label for="result">Результат ТЗ:</label>
+        <input type="text" id="result" name="result" required><br>
+        <label for="comment">Комментарий:</label>
+        <input type="text" id="comment" name="comment" required><br>
+        <label for="trainee">ФИ обучающего/обучающих:</label>
+        <input type="text" id="trainee" name="trainee" required><br>
+        <label for="receiver">ФИ принимающего внутреннее ТЗ:</label>
+        <input type="text" id="receiver" name="receiver" required><br>
+        <button type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main</title>
+  <link rel="stylesheet" href="./css/style_main.css">
+
+</head>
+<body>
+  <div class="container">
+   
+      <div class="logo">
+        <a href="#"><img src="./img_main/logo 1.png" alt="logo"></a>
+      </div>
+      <div class="square1">
+        <img src="./img_main/square1.png" alt="square1">
+        <a href="./testing.html"><button><h3>Тестирование</h3></button></a>
+      </div>
+      <div class="square2">
+        <img src="./img_main/square2.png" alt="square2">
+        <a href="./checklist.html"><button><h3>Чек-лист</h3></button></a>
+      </div>
+      <div class="personal">
+        <img src="./img_main/personal.png" alt="personal">
+        <button id="open-modal"><h3>Личный кабинет</h3></button>
+      </div>
+   
+    <section class="main_content">
+      <div class="block">
+        <div class="datetime" id="datetime">
+          <div class="date" id="date"></div>
+          <div class="time" id="time"></div>
+      </div>
+          <img src="./img_main/picture.png" alt="picture">
+          </div>
+    </section>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Вход в личный кабинет</h2>
+        <form action="/login" method="POST">
+          <div class="form-group">
+            <label for="username">Логин:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">Войти</button>
+        </form>
+      </div>
+    </div>
+  <script>
+      function updateClock() {
+          const now = new Date();
+          const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+          const dayOfWeek = days[now.getDay()];
+          const day = String(now.getDate()).padStart(2, '0');
+          const month = String(now.getMonth() + 1).padStart(2, '0'); 
+          const year = now.getFullYear();
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          const dateString = `${dayOfWeek}, ${day}.${month}.${year}`;
+          const timeString = `${hours}:${minutes}:${seconds}`;
+
+          document.getElementById('date').textContent = dateString;
+          document.getElementById('time').textContent = timeString;
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock(); 
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('modal');
+        var btn = document.getElementById('open-modal');
+        var span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+          modal.style.display = 'block';
+        }
+
+        span.onclick = function() {
+          modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = 'none';
+          }
+        }
+      });
+  </script>
+</div>
+</body>
+</html>
