@@ -1,85 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const addStudentBtn = document.getElementById('add-student-btn');
   const modal = document.getElementById('modal');
-  const closeBtn = document.querySelector('.close-btn');
-  const addStudentForm = document.getElementById('add-student-form');
-  const table = document.querySelector('.blok');
-  let editRow = null;
+  const openModalBtn = document.getElementById('modal-open-btn');
+  const closeModalBtn = document.querySelector('.close-btn');
+  const saveBtn = document.getElementById('save-btn');
+  const form = document.getElementById('add-student-form');
+  const tableBody = document.getElementById('table-body');
 
-  addStudentBtn.addEventListener('click', () => {
+  openModalBtn.addEventListener('click', () => {
     modal.style.display = 'block';
   });
 
-  closeBtn.addEventListener('click', () => {
+  closeModalBtn.addEventListener('click', () => {
     modal.style.display = 'none';
   });
 
   window.addEventListener('click', (event) => {
-    if (event.target == modal) {
+    if (event.target === modal) {
       modal.style.display = 'none';
     }
   });
 
-  addStudentForm.addEventListener('submit', (event) => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
-    
-    const formData = new FormData(addStudentForm);
+    const date = document.getElementById('date').value;
+    const operator = document.getElementById('operator').value;
+    const trainingForm = document.getElementById('training-form').value;
+    const attempt = document.getElementById('attempt').value;
+    const time = document.getElementById('time').value;
+    const specialist = document.getElementById('specialist').value;
+    const result = document.getElementById('result').value;
+    const comment = document.getElementById('comment').value;
+    const trainee = document.getElementById('trainee').value;
+    const receiver = document.getElementById('receiver').value;
+
     const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+      <td><div>${date}</div></td>
+      <td><div>${operator}</div></td>
+      <td><div>${trainingForm}</div></td>
+      <td><div>${attempt}</div></td>
+      <td><div>${time}</div></td>
+      <td><div>${specialist}</div></td>
+      <td><div>${result}</div></td>
+      <td><div>${comment}</div></td>
+      <td><div>${trainee}</div></td>
+      <td><div>${receiver}</div></td>
+    `;
 
-    formData.forEach((value, key) => {
-      const newCell = document.createElement('td');
-      const newDiv = document.createElement('div');
-      newDiv.textContent = value;
-      newCell.appendChild(newDiv);
-      newRow.appendChild(newCell);
-    });
-
-    const actionsCell = document.createElement('td');
-    const editButton = document.createElement('button');
-    editButton.textContent = 'Изменить';
-    editButton.classList.add('edit-btn');
-    editButton.addEventListener('click', () => editRowHandler(newRow));
-
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Удалить';
-    deleteButton.classList.add('delete-btn');
-    deleteButton.addEventListener('click', () => newRow.remove());
-
-    actionsCell.appendChild(editButton);
-    actionsCell.appendChild(deleteButton);
-    newRow.appendChild(actionsCell);
-
-    if (editRow) {
-      table.replaceChild(newRow, editRow);
-      editRow = null;
+    const rowCount = tableBody.getElementsByTagName('tr').length;
+    if (rowCount % 2 === 0) {
+      newRow.classList.add('even-row');
     } else {
-      table.appendChild(newRow);
+      newRow.classList.add('odd-row');
     }
+
+    tableBody.appendChild(newRow);
 
     modal.style.display = 'none';
-    addStudentForm.reset();
+    form.reset();
   });
-
-  function editRowHandler(row) {
-    editRow = row;
-    const cells = row.querySelectorAll('td div');
-    const formData = {
-      date: cells[0].textContent,
-      operator: cells[1].textContent,
-      'training-form': cells[2].textContent,
-      attempt: cells[3].textContent,
-      time: cells[4].textContent,
-      specialist: cells[5].textContent,
-      result: cells[6].textContent,
-      comment: cells[7].textContent,
-      trainee: cells[8].textContent,
-      receiver: cells[9].textContent,
-    };
-
-    for (let key in formData) {
-      document.getElementById(key).value = formData[key];
-    }
-
-    modal.style.display = 'block';
-  }
 });
