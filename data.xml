@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interns>
+  <intern>
+    <date>2024-07-09</date>
+    <operator>Иванов Иван</operator>
+    <trainingForm>Очная</trainingForm>
+    <attempt>1</attempt>
+    <time>09:00</time>
+    <specialist>Петров Петр</specialist>
+    <result>Пройден</result>
+    <comment>Отличный результат</comment>
+    <trainee>Сидорова Мария</trainee>
+    <receiver>Иванова Анна</receiver>
+  </intern>
+</interns>

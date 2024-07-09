@@ -9,47 +9,58 @@
 <body>
   <div class="header container">
     <div class="logo">
-      <a href="#"><img src="./img_main/logo 1.png" alt="logo"></a>
+      <a href="./index_main.html" title="На главную страницу">
+        <img src="./img_main/logo 1.png" alt="logo">
+      </a>
     </div>
     <div class="navigation">
       <div class="nav-item">
         <img src="./img_main/square1.png" alt="square1">
-        <a href="#"><button><h3>Тестирование</h3></button></a>
+        <a href="#"><button title="Вы находитесь в этом разделе"><h3>Тестирование</h3></button></a>
       </div>
       <div class="nav-item">
         <img src="./img_main/personal.png" alt="personal">
-        <a href="#"><button><h3>Личный кабинет</h3></button></a>
+        <a href="#"><button title="Самый лучший сотрудник!"><h3>Личный кабинет</h3></button></a>
       </div>
     </div>
   </div>
   <main class="main container">
-    <!-- <div>
-      <button id="add-student-btn"><img src="./img_testing/pencil.svg" alt="pensil"></button>
-      <p>Добавить стажёра</p>
-    </div> -->
+   <div class="essence">
+    <button title="Для сотрудников КолЦентра">КЦ</button>
+  </div>
+  <div class="essence_button">
+    <button title="Для сотрудников 'Детский мир'">ДМ</button>
+  </div>
   </main>
-  <div class="teable container">
-    <table class="block">
-      <tr>
-        <th><div>Дата</div></th>
-        <th><div>ФИО оператора</div></th>
-        <th><div>Форма обучения</div></th>
-        <th><div>Попытка</div></th>
-        <th><div>Время (МСК)</div></th>
-        <th><div>ФИ специалиста</div></th>
-        <th><div>Результат ТЗ</div></th>
-        <th><div>Комментарий</div></th>
-        <th><div>ФИ обучающего/обучающих</div></th>
-        <th><div>ФИ принимающего внутреннее ТЗ</div></th>
-      </tr>
-      <tbody id="table-body"></tbody>
-    </table>
-    <div>
-      <button id="modal-open-btn" class="new_row">
-        <img src="./img_testing/icons8_plus.svg" alt="plus icon">
-      </button>
+  <div class="table container">
+    <div class="table-header">
+      <table class="block">
+        <thead>
+          <tr>
+            <th class="date-column"><div>Дата</div></th>
+            <th><div>ФИО оператора</div></th>
+            <th><div>Форма обучения</div></th>
+            <th><div>Попытка</div></th>
+            <th><div>Время (МСК)</div></th>
+            <th><div>ФИ специалиста</div></th>
+            <th><div>Результат ТЗ</div></th>
+            <th><div>Комментарий</div></th>
+            <th><div>ФИ обучающего/обучающих</div></th>
+            <th><div>ФИ принимающего внутреннее ТЗ</div></th>
+            <th><div>Действия</div></th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
     </div>
   </div>
+<div class="main container">
+  <div class="new-row-container">
+    <button id="modal-open-btn" class="new_row" title="Добавить">
+      <img src="./img_testing/icons8_plus.svg" alt="plus icon">
+    </button>
+  </div>
+</div>
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
@@ -80,7 +91,6 @@
     </div>
   </div>
 
-  <script src="./script.js"></script>
-  </div>
+  <script src="./script_testing.js"></script>
 </body>
 </html>

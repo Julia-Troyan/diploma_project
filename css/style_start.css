@@ -1,0 +1,86 @@
+.modal button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: none !important;
+  background-color: #4e98dd;
+  border-bottom: 2px solid rgb(243, 244, 245); 
+  color: rgb(238, 241, 243);
+  cursor: pointer;
+  margin-right: 20px !important;
+}
+
+.modal-content {
+  background-color: #4e98dd;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #7996ec;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  justify-content: center;
+}
+.modal-content h2 {
+  font-size: 20px;
+  text-align: center;
+  color: rgb(238, 241, 243);
+  margin-bottom: 20px;
+}
+
+.close {
+  color: #faf9f9;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(223, 48, 48);
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 2px solid #faf9f9 ;
+}
+
+.login-form {
+display: none;
+position: absolute;
+top: 50px; 
+right: 20px; 
+background-color: rgb(254, 255, 255);
+padding: 30px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(50, 112, 226, 0.1);
+width: 300px;
+z-index: 1000;
+}
+
+.login-form h2 {
+margin-bottom: 20px;
+font-size: 24px;
+color: rgba(0, 104, 226, 1);
+text-align: center;
+}
+
+.form-group {
+margin-bottom: 15px;
+text-align: left;
+
+}
+
+.form-group label {
+display: block;
+margin-bottom: 5px;
+font-size: 14px;
+font-weight: 300px;
+color: rgb(12, 71, 138);
+font-family: "fontawesome2";
+}
+
+.form-group input {
+width: 100%;
+padding: 10px;
+border: 1px solid rgba(0, 166, 237, 1);
+border-radius: 15px;
+font-size: 14px;
