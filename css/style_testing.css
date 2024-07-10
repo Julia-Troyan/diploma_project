@@ -131,12 +131,6 @@ button:hover {
   color: rgb(253, 253, 253);
   cursor: pointer;
 }
-/* .teable {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-} */
-
 .table-header {
   width: 100%;
   overflow-x: auto;
@@ -145,9 +139,9 @@ button:hover {
 .new-row-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Выравнивание содержимого по правому краю */
+  justify-content: flex-end;
   gap: 10px;
-  margin-top: 10px; /* Отступ сверху для разделения */
+  margin-top: 10px;
 }
 
 .new_row {
@@ -163,11 +157,11 @@ button:hover {
   gap: 10px;
 }
 .date-column {
-  width: 110px; /* Увеличиваем ширину столбца на 10px */
+  width: 110px;
 }
 
 .date-cell {
-  white-space: nowrap; /* Запрещаем перенос текста */
+  white-space: nowrap;
 }
 
 .modal {

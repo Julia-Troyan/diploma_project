@@ -129,3 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('registration-form');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.location.href = 'testing.html';
+  });
+});
+
