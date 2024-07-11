@@ -26,5 +26,35 @@
       </form>
     </div>
   </div>
+
+ <!-- Добавляем аудиофайлы -->
+ <audio id="click-sound" src="./audio/6a6ad928cfac061.mp3"></audio>
+ <audio id="submit-sound" src="./audio/2f2515f2bcdf5e7.mp3"></audio>
+
+ <script>
+   // Функция для воспроизведения звука кликов по полям ввода
+   function playClickSound() {
+     const sound = document.getElementById('click-sound');
+     sound.play();
+   }
+
+   // Функция для воспроизведения звука клика по кнопке "Войти"
+   function playSubmitSound() {
+     const sound = document.getElementById('submit-sound');
+     sound.play();
+   }
+
+   // Получаем элементы ввода и кнопку
+   const usernameInput = document.getElementById('username');
+   const passwordInput = document.getElementById('password');
+   const submitButton = document.querySelector('button[type="submit"]');
+
+   // Добавляем обработчики событий для кликов по полям ввода
+   usernameInput.addEventListener('click', playClickSound);
+   passwordInput.addEventListener('click', playClickSound);
+
+   // Добавляем обработчик события для клика по кнопке "Войти"
+   submitButton.addEventListener('click', playSubmitSound);
+ </script>
 </body>
 </html>
