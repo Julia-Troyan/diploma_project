@@ -7,20 +7,20 @@
   <link rel="stylesheet" href="./css/style_start.css">
 </head>
 <body>
-  <div class="background-image">
-    <img src="./img_main/picture.png" alt="Background Image">
+  <div class="background-video">
+    <video src="./video/mixkit-many-bubbles-floating-on-a-blue-background-in-motion-51861-full-hd.mp4" autoplay muted loop></video>
   </div>
-  <div class="container">
+   <div class="container">
     <div class="glass-bg">
       <img src="./img_main/logo 1.png" alt="Logo" class="logo">
       <form class="registration-form">
         <h2>Вход в личный кабинет</h2>
         <label for="username"></label>
-        <input type="text" id="username" name="username" required placeholder="Логин">
+        <input type="text" id="username" name="username" required placeholder="Логин" autofocus>
 
         <label for="password"></label>
         <input type="password" id="password" name="password" required placeholder="Пароль">
-
+        <label><input type="checkbox" id="checkbox" name="checkbox"> Запомни меня</label>
         <button type="submit">Войти</button>
         <p>Если забыли логин и пароль, напишите менеджеру</p>
       </form>
@@ -29,13 +29,18 @@
 
  <!-- Добавляем аудиофайлы -->
  <audio id="click-sound" src="./audio/6a6ad928cfac061.mp3"></audio>
- <audio id="submit-sound" src="./audio/2f2515f2bcdf5e7.mp3"></audio>
+ <audio id="submit-sound" src="./audio/rjhjn.mp3"></audio>
+ <audio id="checkbox-sound" src="./audio/najatie-na-kompyuternuyu-knopku1.mp3"></audio>
 
  <script>
    // Функция для воспроизведения звука кликов по полям ввода
    function playClickSound() {
      const sound = document.getElementById('click-sound');
      sound.play();
+   }
+   function playCheckboxSound() {
+    const sound = document.getElementById('checkbox-sound');
+    sound.play();
    }
 
    // Функция для воспроизведения звука клика по кнопке "Войти"
@@ -47,11 +52,13 @@
    // Получаем элементы ввода и кнопку
    const usernameInput = document.getElementById('username');
    const passwordInput = document.getElementById('password');
+   const checkbox = document.getElementById('checkbox');
    const submitButton = document.querySelector('button[type="submit"]');
 
    // Добавляем обработчики событий для кликов по полям ввода
    usernameInput.addEventListener('click', playClickSound);
    passwordInput.addEventListener('click', playClickSound);
+   checkbox.addEventListener('click', playCheckboxSound);
 
    // Добавляем обработчик события для клика по кнопке "Войти"
    submitButton.addEventListener('click', playSubmitSound);
